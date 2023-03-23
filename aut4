@@ -1,0 +1,50 @@
+import pyautogui
+import time
+
+pyautogui.PAUSE= 0.5
+pyautogui.hotkey("ctrl", "t")
+pyautogui.write('https://pages.hashtagtreinamentos.com/aula1-intensivao-sistema')
+pyautogui.press('enter')
+time.sleep(4)
+pyautogui.click(x=932, y=337)
+pyautogui.write('edson')
+pyautogui.click(x=913, y=423)
+pyautogui.write('123')
+pyautogui.click(x=949, y=495)
+time.sleep(3)
+pyautogui.click(x=551, y=469)
+pyautogui.click(x=1613, y=198)
+pyautogui.click(x=1292, y=809)
+time.sleep(4)
+import pandas 
+t = pandas.read_csv("C:/Users/Edson/Downloads/Compras.csv", sep=';')
+display(t)
+tg = t['ValorFinal'].sum()
+q =t ['Quantidade'].sum()
+vm=tg/q 
+print(f'o total gasto foi de {tg:.0f}')
+print(f'a quantidade de produto foi de {q}')
+print(f'o valor medio foi de {vm:.0f}')                
+import pyperclip
+pyautogui.PAUSE= 1
+pyautogui.hotkey("ctrl", "t")
+pyautogui.write('https://outlook.live.com/mail/0/')
+pyautogui.press('enter')
+time.sleep(4)
+pyautogui.click(x=142, y=177)
+pyautogui.write('edsonaraujolimajunior@hotmail.com')
+pyautogui.press('enter')
+pyautogui.click(x=317, y=370)
+pyautogui.write('relatorio')
+pyautogui.click(x=469, y=459)
+texto=f'''prezados,
+segue abaixo o relatorio diario 
+total gasto :{tg:.0f}
+total de produtos :{q}
+preço medio:{vm:.0f}
+qualquer coisa estou a disposiçao 
+att,
+edson Araujo '''
+pyperclip.copy(texto)
+pyautogui.hotkey('ctrl','v')
+pyautogui.hotkey('ctrl','enter')
